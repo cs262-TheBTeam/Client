@@ -4,20 +4,6 @@ import { Button, StyleSheet, Text, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-
-function HomeScreen({ navigation }) {
-  return (
-    <View style={styles.container}>
-      <Text>Welcome to Calvin Location Guesser!!!</Text>
-      <StatusBar style="auto" />
-      <Button
-        title="Start Quiz"
-        onPress={() => navigation.navigate('Q1')}
-      />
-    </View>
-  );
-}
-
 function QuestionsScreen({ navigation }) {
   return (
     <View style={styles.container}>
