@@ -5,7 +5,7 @@ import { globalStyles } from '../styles/global';
 
 export default function ResultsScreen({ navigation }) {
     return (
-        <View style={globalStyles.container}>
+        <View style={globalStyles.template}>
             <Text>Result:</Text>
             <StatusBar style="auto" />
             <Button

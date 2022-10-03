@@ -6,10 +6,10 @@ import { globalStyles } from '../styles/global';
 export default function QuestionScreen({ navigation }) {
     return (
         <View style={globalStyles.container}>
-            <Text>Question:</Text>
-            <StatusBar style="auto" />
+            <Text style={globalStyles.title}>Where is this location?</Text>
             <Button
-                title="See Results"
+                style={globalStyles.button}
+                title="Check answers"
                 onPress={() => navigation.navigate('R1')}
             />
         </View>
