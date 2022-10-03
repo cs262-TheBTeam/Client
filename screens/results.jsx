@@ -10,7 +10,7 @@ export default function ResultsScreen({ navigation }) {
             <StatusBar style="auto" />
             <Button
                 title="Go Home"
-                onPress={() => navigation.navigate('Home')}
+                onPress={() => navigation.navigate('home')}
             />
         </View>
     );

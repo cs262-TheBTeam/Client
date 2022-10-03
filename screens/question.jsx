@@ -5,12 +5,11 @@ import { globalStyles } from '../styles/global';
 
 export default function QuestionScreen({ navigation }) {
     return (
-        <View style={globalStyles.container}>
-            <Text style={globalStyles.title}>Where is this location?</Text>
+        <View style={globalStyles.template}>
+            <Text>Where is this location?</Text>
             <Button
-                style={globalStyles.button}
                 title="Check answers"
-                onPress={() => navigation.navigate('R1')}
+                onPress={() => navigation.navigate('results')}
             />
         </View>
     );
