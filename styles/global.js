@@ -1,10 +1,27 @@
 import { StyleSheet } from 'react-native';
 
 export const globalStyles = StyleSheet.create({
-    container: {
+    template: {
         flex: 1,
         backgroundColor: '#fff',
         alignItems: 'center',
         justifyContent: 'center',
     },
+    container: {
+        flex: 1,
+        backgroundColor: '#fff',
+       // alignItems: 'center',
+       // justifyContent: 'center',
+    },
+    title: {
+        flex: 1,
+        backgroundColor: '#fff',
+        textAlign: 'left',
+        padding: 10,
+
+    },
+    button: {
+        alignItems: 'right',
+        justifyContent: 'right',
+    }
 });

@@ -5,7 +5,7 @@ import { globalStyles } from '../styles/global';
 
 export default function HomeScreen({ navigation }) {
   return (
-    <View style={globalStyles.container}>
+    <View style={globalStyles.template}>
       <Text>Welcome to Calvin Location Guesser!!!</Text>
       <StatusBar style="auto" />
       <Button
