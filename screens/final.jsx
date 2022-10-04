@@ -3,14 +3,14 @@ import { StatusBar } from 'expo-status-bar';
 import { Button, Text, View } from 'react-native';
 import { globalStyles } from '../styles/global';
 
-export default function ResultsScreen({ navigation }) {
+export default function FinalScreen({ navigation }) {
     return (
         <View style={globalStyles.template}>
-            <Text>Result:</Text>
+            <Text>Here is your final score:</Text>
             <StatusBar style="auto" />
             <Button
-                title="Next"
-                onPress={() => navigation.navigate('final')}
+                title="Go Home"
+                onPress={() => navigation.navigate('home')}
             />
         </View>
     );
