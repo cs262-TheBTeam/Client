@@ -6,7 +6,7 @@ import { globalStyles } from '../styles/global';
 export default function ResultsScreen({ navigation }) {
     return (
         <View style={globalStyles.template}>
-            <Text>Result:</Text>
+            <Text>Answer: Spoelhof Fieldhouse-204</Text>
             <StatusBar style="auto" />
             <Button
                 title="Next"
