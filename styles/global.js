@@ -21,8 +21,8 @@ export const globalStyles = StyleSheet.create({
         textAlign: "center",
         fontSize: 30,
         fontWeight: "bold"
-
     },
+    
     button: {
         alignItems: 'center',
         right: 40,
@@ -43,8 +43,15 @@ export const globalStyles = StyleSheet.create({
         textAlign: "left",
         fontSize: 20,
         fontWeight: "bold"
-    }
+    },
 
 
+    leaderboard: {
+        flex: 1,
+        backgroundColor: '#fff',
+        alignItems: 'center',
+        justifyContent: 'center',
+        marginTop: '20%',
+    },
 
 });
