@@ -4,7 +4,7 @@ import { globalStyles } from '../styles/global';
 import Slideshow from 'react-native-image-slider-show';
 import DropDownPicker from 'react-native-dropdown-picker';
 
-export default function QuestionScreen({ navigation }) {
+export default function QuestionScreen2({ navigation }) {
     // dropdown
     const [open, setOpen] = useState(false);
     const [value, setValue] = useState(null);
@@ -22,20 +22,19 @@ export default function QuestionScreen({ navigation }) {
         { label: 'Covenant Fine Arts Center', value: 'CFAC' },
         { label: 'DeVos Communications Center', value: 'DCC' }
     ]);
-
     // Text box
     const [text, onChangeText] = React.useState("Useless Text");
     const [number, onChangeNumber] = React.useState(null);
 
     return (
         <View style={globalStyles.template}>
-            <Text>Where is this location?</Text>
+            <Text>Question Number Two</Text>
             <Slideshow
                 dataSource={[
-                    { url: require('../img/HC204/HL204-1.jpg') },
-                    { url: require('../img/HC204/HL204-2.jpg') },
-                    { url: require('../img/HC204/HL204-3.jpg') },
-                    { url: require('../img/HC204/HL204-4.jpg') },
+                    { url: require('../img/NH064/NH064-1.jpg') },
+                    { url: require('../img/NH064/NH064-2.jpg') },
+                    { url: require('../img/NH064/NH064-3.jpg') },
+                    { url: require('../img/NH064/NH064-4.jpg') },
                 ]}
                 scrollEnabled={false}
             />
@@ -55,7 +54,7 @@ export default function QuestionScreen({ navigation }) {
             />
             <Button
                 title="Check answers"
-                onPress={() => navigation.navigate('results')}
+                onPress={() => navigation.navigate('results2')}
             />
         </View>
     );
