@@ -13,6 +13,14 @@ export default function QuestionScreen({ navigation }) {
         { label: 'Science Building', value: 'SB' },
         { label: 'Spoelhof Fieldhouse', value: 'SF' },
         { label: 'Prince Conference Center', value: 'PCC' },
+        { label: 'Spoelhof Center', value: 'SC' },
+        { label: 'Hiemenga Hall', value: 'HH' },
+        { label: 'Buisiness School', value: 'PCC' },
+        { label: 'Hekman Library', value: 'HL' },
+        { label: 'DeVries Hall', value: 'DH' },
+        { label: 'Engineering Building', value: 'EB' },
+        { label: 'Covenant Fine Arts Center', value: 'CFAC' },
+        { label: 'DeVos Communications Center', value: 'DCC' }
     ]);
 
     // Text box
