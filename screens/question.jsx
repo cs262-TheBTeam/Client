@@ -15,7 +15,7 @@ export default function QuestionScreen({ navigation }) {
         { label: 'Prince Conference Center', value: 'PCC' },
         { label: 'Spoelhof Center', value: 'SC' },
         { label: 'Hiemenga Hall', value: 'HH' },
-        { label: 'Buisiness School', value: 'PCC' },
+        { label: 'Buisiness School', value: 'BS' },
         { label: 'Hekman Library', value: 'HL' },
         { label: 'DeVries Hall', value: 'DH' },
         { label: 'Engineering Building', value: 'EB' },
