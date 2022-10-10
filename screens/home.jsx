@@ -12,6 +12,10 @@ export default function HomeScreen({ navigation }) {
         title="Start Quiz"
         onPress={() => navigation.navigate('question')}
       />
+      <Button
+        title="Go to leaderboard"
+        onPress={() => navigation.navigate('leaderboard')}
+      />
     </View>
   );
 }
