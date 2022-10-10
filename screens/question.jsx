@@ -20,7 +20,7 @@ export default function QuestionScreen({ navigation }) {
         { label: 'DeVries Hall', value: 'DH' },
         { label: 'Engineering Building', value: 'EB' },
         { label: 'Covenant Fine Arts Center', value: 'CFAC' },
-        { label: 'DeVos Communications Center', value: 'DCC' },
+        { label: 'DeVos Communications Center', value: 'DCC' }
     ]);
 
     // Text box
