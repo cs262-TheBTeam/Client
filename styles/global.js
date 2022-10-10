@@ -25,5 +25,13 @@ export const globalStyles = StyleSheet.create({
     button: {
         alignItems: 'right',
         justifyContent: 'right',
-    }
+    },
+
+    leaderboard: {
+        flex: 1,
+        backgroundColor: '#fff',
+        alignItems: 'center',
+        justifyContent: 'center',
+        marginTop: '20%',
+    },
 });
