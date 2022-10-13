@@ -9,13 +9,14 @@ import ResultsScreen1 from "./screens/results1.jsx";
 import ResultsScreen2 from "./screens/results2.jsx";
 import ResultsScreen3 from "./screens/results3.jsx";
 import FinalScreen from "./screens/final.jsx";
+import LeaderboardScreen from "./screens/leaderboard.jsx";
 
 const Stack = createNativeStackNavigator();
 
 export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator>
+      <Stack.Navigator screenOptions={{ headerShown: false }}>
         <Stack.Screen name="home" component={HomeScreen} />
         <Stack.Screen name="question1" component={QuestionScreen1} />
         <Stack.Screen name="question2" component={QuestionScreen2} />
@@ -24,6 +25,7 @@ export default function App() {
         <Stack.Screen name="results2" component={ResultsScreen2} />
         <Stack.Screen name="results3" component={ResultsScreen3} />
         <Stack.Screen name="final" component={FinalScreen} />
+        <Stack.Screen name="leaderboard" component={LeaderboardScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
