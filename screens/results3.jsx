@@ -38,7 +38,7 @@ export default function ResultsScreen1({ route, navigation }) {
             <StatusBar style="auto" />
             <Button
                 title="Next"
-                onPress={() => navigation.navigate('home')}
+                onPress={() => navigation.navigate('leaderboard', { playerScore: newScore })}
             />
         </View>
     );

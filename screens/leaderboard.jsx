@@ -31,7 +31,9 @@ const Item = ({ name, score }) => (
     </View>
 );
 
-export default function LeaderboardScreen({ navigation }) {
+export default function LeaderboardScreen({ route, navigation }) {
+
+    const { playerScore } = route.params
 
     const renderItem = ({ item }) => (
         <Item name={item.name} score={item.score} />
@@ -43,6 +45,7 @@ export default function LeaderboardScreen({ navigation }) {
             <FlatList
                 data={data.sort((a, b) => a.score < b.score)}
                 renderItem={renderItem} />
+            <Text>Your Score: {playerScore}</Text>
             <Button
                 title="Home"
                 onPress={() => navigation.navigate('home')}
