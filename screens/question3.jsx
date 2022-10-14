@@ -4,7 +4,10 @@ import { globalStyles } from '../styles/global';
 import Slideshow from 'react-native-image-slider-show';
 import DropDownPicker from 'react-native-dropdown-picker';
 
-export default function QuestionScreen3({ navigation }) {
+export default function QuestionScreen1({ route, navigation }) {
+
+    const { score } = route.params;
+
     // dropdown
     const [open, setOpen] = useState(false);
     const [value, setValue] = useState(null);
@@ -15,20 +18,21 @@ export default function QuestionScreen3({ navigation }) {
         { label: 'Prince Conference Center', value: 'PCC' },
         { label: 'Spoelhof Center', value: 'SC' },
         { label: 'Hiemenga Hall', value: 'HH' },
-        { label: 'Buisiness School', value: 'PCC' },
+        { label: 'Buisiness School', value: 'BS' },
         { label: 'Hekman Library', value: 'HL' },
         { label: 'DeVries Hall', value: 'DH' },
         { label: 'Engineering Building', value: 'EB' },
         { label: 'Covenant Fine Arts Center', value: 'CFAC' },
         { label: 'DeVos Communications Center', value: 'DCC' }
     ]);
+
     // Text box
     const [text, onChangeText] = React.useState("Useless Text");
     const [number, onChangeNumber] = React.useState(null);
 
     return (
         <View style={globalStyles.template}>
-            <Text>Question Number Three</Text>
+            <Text>Question Number One</Text>
             <Slideshow
                 dataSource={[
                     { url: require('../img/SB010/SB010-1.jpg') },
@@ -54,7 +58,7 @@ export default function QuestionScreen3({ navigation }) {
             />
             <Button
                 title="Check answers"
-                onPress={() => navigation.navigate('results3')}
+                onPress={() => navigation.navigate('results3', { score, dropDownGuess: value, textInputGuess: number, dropDownAnswer: "SB", textInputAnswer: "010" })}
             />
         </View>
     );

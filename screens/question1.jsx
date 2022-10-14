@@ -4,7 +4,10 @@ import { globalStyles } from '../styles/global';
 import Slideshow from 'react-native-image-slider-show';
 import DropDownPicker from 'react-native-dropdown-picker';
 
-export default function QuestionScreen1({ navigation }) {
+export default function QuestionScreen1({ route, navigation }) {
+
+    const { score } = route.params;
+
     // dropdown
     const [open, setOpen] = useState(false);
     const [value, setValue] = useState(null);
@@ -55,7 +58,7 @@ export default function QuestionScreen1({ navigation }) {
             />
             <Button
                 title="Check answers"
-                onPress={() => navigation.navigate('results1')}
+                onPress={() => navigation.navigate('results1', { score, dropDownGuess: value, textInputGuess: number, dropDownAnswer: "SF", textInputAnswer: "204" })}
             />
         </View>
     );
