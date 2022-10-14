@@ -10,7 +10,7 @@ export default function HomeScreen({ navigation }) {
       <StatusBar style="auto" />
       <Button
         title="Start Quiz"
-        onPress={() => navigation.navigate('question1')}
+        onPress={() => navigation.navigate('question1', { score: 0 })}
       />
       <Button
         title="Go to leaderboard"
