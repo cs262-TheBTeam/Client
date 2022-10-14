@@ -14,7 +14,7 @@ export default function HomeScreen({ navigation }) {
       />
       <Button
         title="Go to leaderboard"
-        onPress={() => navigation.navigate('leaderboard')}
+        onPress={() => navigation.navigate('leaderboard', { playerScore: undefined })}
       />
     </View>
   );
