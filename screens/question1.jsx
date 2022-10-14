@@ -33,6 +33,9 @@ export default function QuestionScreen1({ route, navigation }) {
     return (
         <View style={globalStyles.template}>
             <Text>Question Number One</Text>
+    
+        
+            
             <Slideshow
                 dataSource={[
                     { url: require('../img/HC204/HL204-1.jpg') },
