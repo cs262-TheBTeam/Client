@@ -1,3 +1,4 @@
+import { faRightToBracket } from '@fortawesome/free-solid-svg-icons';
 import { StyleSheet } from 'react-native';
 
 export const globalStyles = StyleSheet.create({
@@ -22,21 +23,24 @@ export const globalStyles = StyleSheet.create({
         fontSize: 30,
         fontWeight: "bold"
     },
-    
+
+
     button: {
+        backgroundColor: "#9ed9de",
+        borderRadius: 28,
         alignItems: 'center',
-        right: 40,
-        left: 40,
-        position: 'absolute',
-        bottom: 40,
+        justifyContent: 'center',
         paddingVertical: 20,
-        paddingHorizontal: 20,
-        borderRadius: 4,
-        elevation: 3,
-        backgroundColor: 'cyan',
+        marginHorizontal: 70,
     },
 
-    result:{
+    buttonText: {
+        color: "#fff",
+        fontSize: 25,
+    },
+
+
+    result: {
         marginTop: 16,
         paddingVertical: 16,
         color: "#20232a",
