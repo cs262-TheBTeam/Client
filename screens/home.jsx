@@ -12,7 +12,7 @@ export default function HomeScreen({ navigation }) {
         <Text style={globalStyles.buttonText}>Start Quiz</Text>
       </TouchableOpacity>
       <TouchableOpacity style={globalStyles.button} onPress={() => navigation.navigate('leaderboard', { playerScore: undefined })}>
-        <Text style={globalStyles.buttonText}>Go to leaderboard</Text>
+        <Text style={globalStyles.buttonText}>Leaderboard</Text>
       </TouchableOpacity>
     </View>
   );

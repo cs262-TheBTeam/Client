@@ -26,17 +26,18 @@ export const globalStyles = StyleSheet.create({
 
 
     button: {
-        backgroundColor: "#9ed9de",
+        backgroundColor: "#bf4a67",
         borderRadius: 28,
         alignItems: 'center',
         justifyContent: 'center',
         paddingVertical: 20,
-        marginHorizontal: 70,
+        paddingHorizontal: 30,
+        marginHorizontal: 80,
     },
 
     buttonText: {
         color: "#fff",
-        fontSize: 25,
+        fontSize: 16,
     },
 
 
