@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button, Text, View, TextInput } from 'react-native';
+import { Button, Text, TouchableOpacity, View, TextInput } from 'react-native';
 import { globalStyles } from '../styles/global';
 import Slideshow from 'react-native-image-slider-show';
 import DropDownPicker from 'react-native-dropdown-picker';
@@ -59,10 +59,9 @@ export default function QuestionScreen1({ route, navigation }) {
                 placeholder="Room #"
                 keyboardType="alphanumeric"
             />
-            <Button
-                title="Check answers"
-                onPress={() => navigation.navigate('results1', { score, dropDownGuess: value, textInputGuess: number, dropDownAnswer: "SF", textInputAnswer: "204" })}
-            />
+            <TouchableOpacity style={globalStyles.button} onPress={() => navigation.navigate('results1', { playerScore: 0 })}>
+                <Text style={globalStyles.buttonText}>Check Answers</Text>
+            </TouchableOpacity>
         </View>
     );
 }

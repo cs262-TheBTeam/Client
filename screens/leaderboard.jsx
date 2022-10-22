@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Text, View, FlatList } from 'react-native';
+import { Button, Text, TouchableOpacity, View, FlatList } from 'react-native';
 import { globalStyles } from '../styles/global';
 
 const data = [
@@ -46,10 +46,9 @@ export default function LeaderboardScreen({ route, navigation }) {
                 data={data.sort((a, b) => a.score < b.score)}
                 renderItem={renderItem} />
             <Text>Your Score: {playerScore}</Text>
-            <Button
-                title="Home"
-                onPress={() => navigation.navigate('home')}
-            />
+            <TouchableOpacity style={globalStyles.button} onPress={() => navigation.navigate('home', { playerScore: 0 })}>
+                <Text style={globalStyles.buttonText}>Return home</Text>
+            </TouchableOpacity>
         </View>
     );
 }
