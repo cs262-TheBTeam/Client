@@ -13,17 +13,19 @@ export const globalStyles = StyleSheet.create({
     container: {
         flex: 1,
         padding: 24,
-        backgroundColor: '#fff',
+        backgroundColor: '#D2D6D6',
     },
     title: {
-        marginTop: 16,
-        paddingVertical: 8,
-        color: "#20232a",
+        color: "#424B4C",
         textAlign: "center",
-        fontSize: 30,
+        fontSize: 32,
         fontWeight: "bold"
     },
 
+    text: {
+        color: "#424B4C",
+        fontSize: 16,
+    },
 
     button: {
         backgroundColor: "#bf4a67",
@@ -36,7 +38,7 @@ export const globalStyles = StyleSheet.create({
     },
 
     buttonText: {
-        color: "#fff",
+        color: "#D2D6D6",
         fontSize: 16,
     },
 
