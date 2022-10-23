@@ -56,9 +56,21 @@ export const globalStyles = StyleSheet.create({
     leaderboard: {
         flex: 1,
         backgroundColor: '#fff',
-        alignItems: 'center',
-        justifyContent: 'center',
-        marginTop: '20%',
+        //alignItems: 'center',
+        //justifyContent: 'center',
+        paddingVertical: 40,
     },
+
+    leaderboardCell: {
+        backgroundColor: '#F4E367',
+        borderColor: '#BF4A67',
+        borderBottomWidth: 5,
+        borderTopWidth: 5,
+        color: "#424B4C",
+        fontSize: 16,
+        textAlign: 'left',
+        paddingVertical: 20,
+        paddingHorizontal: 10,
+    }
 
 });
