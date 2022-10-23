@@ -13,8 +13,9 @@ export const globalStyles = StyleSheet.create({
     container: {
         flex: 1,
         padding: 24,
-        backgroundColor: '#D2D6D6',
+        backgroundColor: '#E6E6E6',
     },
+
     title: {
         color: "#424B4C",
         textAlign: "center",
@@ -42,6 +43,22 @@ export const globalStyles = StyleSheet.create({
         fontSize: 16,
     },
 
+    bigSpace: {
+        flex: 0.2,
+    },
+
+    smallSpace: {
+        flex: 0.02,
+    },
+
+    centerItem: {
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+
+    logo: {
+        position: 'center',
+    },
 
     result: {
         marginTop: 16,
