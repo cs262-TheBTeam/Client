@@ -12,9 +12,9 @@ export default function HomeScreen({ navigation }) {
 
       <View style={{ flex: 0.2 }}></View>
 
-      {/* image */}
+      {/* logo */}
 
-      <View style={globalStyles.centerItem}><Image style={globalStyles.logo} source={require('../img/picture.jpg')} /></View>
+      <View style={globalStyles.centerItem}><Image style={globalStyles.logo} source={require('../img/logo.png')} /></View>
 
       {/* div */}
 

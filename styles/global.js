@@ -13,7 +13,7 @@ export const globalStyles = StyleSheet.create({
     container: {
         flex: 1,
         padding: 24,
-        backgroundColor: '#D2D6D6',
+        backgroundColor: '#E6E6E6',
     },
 
     title: {
@@ -58,8 +58,6 @@ export const globalStyles = StyleSheet.create({
 
     logo: {
         position: 'center',
-        height: 210,
-        width: 210,
     },
 
     result: {
