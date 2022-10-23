@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { Button, Text, TouchableOpacity, View } from 'react-native';
+import { Button, Text, TouchableHighlight, View } from 'react-native';
 import { globalStyles } from '../styles/global';
 
 export default function ResultsScreen1({ route, navigation }) {
@@ -36,9 +36,9 @@ export default function ResultsScreen1({ route, navigation }) {
             <Text>You guessed: {dropDownGuess}-{textInputGuess}</Text>
             <Text>Your score: {newScore}</Text>
             <StatusBar style="auto" />
-            <TouchableOpacity style={globalStyles.button} onPress={() => navigation.navigate('question2', { playerScore: 0 })}>
+            <TouchableHighlight style={globalStyles.button} underlayColor={'#97354E'} onPress={() => navigation.navigate('question2', { playerScore: 0 })}>
                 <Text style={globalStyles.buttonText}>Next</Text>
-            </TouchableOpacity>
+            </TouchableHighlight>
         </View>
     );
 }

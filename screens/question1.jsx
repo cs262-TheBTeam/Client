@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button, Text, TouchableOpacity, View, TextInput } from 'react-native';
+import { Button, Text, TouchableHighlight, View, TextInput } from 'react-native';
 import { globalStyles } from '../styles/global';
 import Slideshow from 'react-native-image-slider-show';
 import DropDownPicker from 'react-native-dropdown-picker';
@@ -33,9 +33,9 @@ export default function QuestionScreen1({ route, navigation }) {
     return (
         <View style={globalStyles.template}>
             <Text>Question Number One</Text>
-    
-        
-            
+
+
+
             <Slideshow
                 dataSource={[
                     { url: require('../img/HC204/HL204-1.jpg') },
@@ -59,9 +59,9 @@ export default function QuestionScreen1({ route, navigation }) {
                 placeholder="Room #"
                 keyboardType="alphanumeric"
             />
-            <TouchableOpacity style={globalStyles.button} onPress={() => navigation.navigate('results1', { playerScore: 0 })}>
+            <TouchableHighlight style={globalStyles.button} underlayColor={'#97354E'} onPress={() => navigation.navigate('results1', { playerScore: 0 })}>
                 <Text style={globalStyles.buttonText}>Check Answers</Text>
-            </TouchableOpacity>
+            </TouchableHighlight>
         </View>
     );
 }
