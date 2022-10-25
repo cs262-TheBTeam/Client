@@ -31,6 +31,9 @@ export default function ResultsScreen1({ route, navigation }) {
 
 
     return (
+
+
+        
         <View style={globalStyles.template}>
             <Text>Answer: {dropDownAnswer}-{textInputAnswer}</Text>
             <Text>You guessed: {dropDownGuess}-{textInputGuess}</Text>
