@@ -14,7 +14,7 @@ export default function HomeScreen({ navigation }) {
 
       {/* logo */}
 
-      <View style={globalStyles.centerItem}><Image style={globalStyles.logo} source={require('../img/logo.png')} /></View>
+      <View style={globalStyles.centerItem}><Image source={require('../img/logo.png')} /></View>
 
       {/* div */}
 
