@@ -16,10 +16,22 @@ export const globalStyles = StyleSheet.create({
         backgroundColor: '#E6E6E6',
     },
 
+    unpaddedContainer: {
+        flex: 1,
+        backgroundColor: '#E6E6E6',
+    },
+
     title: {
         color: "#424B4C",
         textAlign: "center",
         fontSize: 32,
+        fontWeight: "bold"
+    },
+
+    subtitle: {
+        color: "#424B4C",
+        textAlign: "center",
+        fontSize: 26,
         fontWeight: "bold"
     },
 
@@ -43,21 +55,39 @@ export const globalStyles = StyleSheet.create({
         fontSize: 16,
     },
 
-    bigSpace: {
-        flex: 0.2,
+    textBox: {
+        fontSize: 16,
+        color: "#424B4C",
+        backgroundColor: "#F4E367",
+        borderRadius: 28,
+        borderColor: "#bf4a67",
+        borderWidth: 5,
+        textAlign: 'center',
+        paddingVertical: 20,
+        paddingHorizontal: 30,
+        marginHorizontal: 60,
     },
 
-    smallSpace: {
-        flex: 0.02,
+    dropDown: {
+        color: "#424B4C",
+        backgroundColor: "#F4E367",
+        borderRadius: 28,
+        borderColor: "#bf4a67",
+        borderWidth: 5,
+        paddingVertical: 20,
+        paddingHorizontal: 30,
+
     },
+
+    dropDownText: {
+        fontSize: 16,
+        color: "#424B4C"
+    },
+
 
     centerItem: {
         justifyContent: 'center',
         alignItems: 'center',
-    },
-
-    logo: {
-        position: 'center',
     },
 
     result: {
