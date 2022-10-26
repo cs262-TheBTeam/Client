@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button, Text, TouchableHighlight, View, TextInput } from 'react-native';
+import { KeyboardAvoidingView, Text, TouchableHighlight, View, TextInput } from 'react-native';
 import { globalStyles } from '../styles/global';
 import Slideshow from 'react-native-image-slider-show';
 import DropDownPicker from 'react-native-dropdown-picker';
@@ -18,7 +18,7 @@ export default function QuestionScreen1({ route, navigation }) {
         { label: 'Prince Conference Center', value: 'PCC' },
         { label: 'Spoelhof Center', value: 'SC' },
         { label: 'Hiemenga Hall', value: 'HH' },
-        { label: 'Buisiness School', value: 'BS' },
+        { label: 'Business School', value: 'BS' },
         { label: 'Hekman Library', value: 'HL' },
         { label: 'DeVries Hall', value: 'DH' },
         { label: 'Engineering Building', value: 'EB' },
@@ -31,21 +31,40 @@ export default function QuestionScreen1({ route, navigation }) {
     const [number, onChangeNumber] = React.useState(null);
 
     return (
-        <View style={globalStyles.template}>
-            <Text>Question Number One</Text>
+        <KeyboardAvoidingView behavior={Platform.OS === "ios" ? "padding" : "height"} style={globalStyles.unpaddedContainer}>
 
+            {/*image*/}
 
+            <View style={globalStyles.roomImages}>
+                <Slideshow height={400}
+                    dataSource={[
+                        { url: require('../img/HC204/HL204-1.jpg') },
+                        { url: require('../img/HC204/HL204-2.jpg') },
+                        { url: require('../img/HC204/HL204-3.jpg') },
+                        { url: require('../img/HC204/HL204-4.jpg') },
+                    ]}
+                    scrollEnabled={true}
+                />
+            </View>
 
-            <Slideshow
-                dataSource={[
-                    { url: require('../img/HC204/HL204-1.jpg') },
-                    { url: require('../img/HC204/HL204-2.jpg') },
-                    { url: require('../img/HC204/HL204-3.jpg') },
-                    { url: require('../img/HC204/HL204-4.jpg') },
-                ]}
-                scrollEnabled={false}
-            />
+            {/* div */}
+
+            <View style={{ flex: 0.15 }}></View>
+
+            {/* title */}
+
+            <Text style={globalStyles.subtitle}>What Room Is This?</Text>
+
+            {/* div */}
+
+            <View style={{ flex: 0.15 }}></View>
+
+            {/* dropdown */}
+
             <DropDownPicker
+                style={globalStyles.dropDown}
+                textStyle={globalStyles.dropDownText}
+                dropDownContainerStyle={globalStyles.dropDown}
                 open={open}
                 value={value}
                 items={items}
@@ -53,15 +72,64 @@ export default function QuestionScreen1({ route, navigation }) {
                 setValue={setValue}
                 setItems={setItems}
             />
+
+            {/* div */}
+
+            <View style={{ flex: 0.15 }}></View>
+
+            {/* textinput */}
+
             <TextInput
+                style={globalStyles.textBox}
                 onChangeText={onChangeNumber}
                 value={number}
-                placeholder="Room #"
-                keyboardType="alphanumeric"
+                placeholder="Room Number"
+                keyboardType="numbers-and-punctuation"
+                maxLength={3}
+                placeholderTextColor="#424B4C" // not for android?
             />
-            <TouchableHighlight style={globalStyles.button} underlayColor={'#97354E'} onPress={() => navigation.navigate('results1', { playerScore: 0 })}>
+
+            {/* div */}
+
+            <View style={{ flex: 0.15 }}></View>
+
+            {/* button */}
+
+            <TouchableHighlight style={globalStyles.button} underlayColor={'#97354E'} onPress={() => navigation.navigate('results1', { score, dropDownGuess: value, textInputGuess: number, dropDownAnswer: "HL", textInputAnswer: "204" })}>
                 <Text style={globalStyles.buttonText}>Check Answers</Text>
             </TouchableHighlight>
-        </View>
+
+
+            {/* <Text>Question Number One</Text>
+
+
+
+        <Slideshow
+            dataSource={[
+                { url: require('../img/HC204/HL204-1.jpg') },
+                { url: require('../img/HC204/HL204-2.jpg') },
+                { url: require('../img/HC204/HL204-3.jpg') },
+                { url: require('../img/HC204/HL204-4.jpg') },
+            ]}
+            scrollEnabled={false}
+        />
+        <DropDownPicker
+            open={open}
+            value={value}
+            items={items}
+            setOpen={setOpen}
+            setValue={setValue}
+            setItems={setItems}
+        />
+        <TextInput
+            onChangeText={onChangeNumber}
+            value={number}
+            placeholder="Room #"
+            keyboardType="alphanumeric"
+        />
+        <TouchableHighlight style={globalStyles.button} underlayColor={'#97354E'} onPress={() => navigation.navigate('results1', { playerScore: 0 })}>
+            <Text style={globalStyles.buttonText}>Check Answers</Text>
+        </TouchableHighlight> */}
+        </KeyboardAvoidingView>
     );
 }
