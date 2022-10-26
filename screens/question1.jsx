@@ -31,7 +31,7 @@ export default function QuestionScreen1({ route, navigation }) {
     const [number, onChangeNumber] = React.useState(null);
 
     return (
-        <KeyboardAvoidingView behavior={Platform.OS === "ios" ? "padding" : "height"} style={globalStyles.unpaddedContainer}>
+        <KeyboardAvoidingView behavior={Platform.OS === "ios" ? "padding" : "height"} style={[globalStyles.unpaddedContainer, { postion: "absolute" }]}>
 
             {/*image*/}
 
@@ -61,17 +61,19 @@ export default function QuestionScreen1({ route, navigation }) {
 
             {/* dropdown */}
 
-            <DropDownPicker
-                style={globalStyles.dropDown}
-                textStyle={globalStyles.dropDownText}
-                dropDownContainerStyle={globalStyles.dropDown}
-                open={open}
-                value={value}
-                items={items}
-                setOpen={setOpen}
-                setValue={setValue}
-                setItems={setItems}
-            />
+            <View style={[{ marginHorizontal: 60 }, { zIndex: 10 }]}>
+                <DropDownPicker
+                    style={globalStyles.dropDown}
+                    textStyle={globalStyles.dropDownText}
+                    dropDownContainerStyle={globalStyles.dropDown}
+                    open={open}
+                    value={value}
+                    items={items}
+                    setOpen={setOpen}
+                    setValue={setValue}
+                    setItems={setItems}
+                />
+            </View>
 
             {/* div */}
 
@@ -95,7 +97,10 @@ export default function QuestionScreen1({ route, navigation }) {
 
             {/* button */}
 
-            <TouchableHighlight style={globalStyles.button} underlayColor={'#97354E'} onPress={() => navigation.navigate('results1', { score, dropDownGuess: value, textInputGuess: number, dropDownAnswer: "HL", textInputAnswer: "204" })}>
+            <TouchableHighlight
+                style={globalStyles.button}
+                underlayColor={'#97354E'}
+                onPress={() => navigation.navigate('results1', { score, dropDownGuess: value, textInputGuess: number, dropDownAnswer: "HL", textInputAnswer: "204" })}>
                 <Text style={globalStyles.buttonText}>Check Answers</Text>
             </TouchableHighlight>
 
@@ -130,6 +135,6 @@ export default function QuestionScreen1({ route, navigation }) {
         <TouchableHighlight style={globalStyles.button} underlayColor={'#97354E'} onPress={() => navigation.navigate('results1', { playerScore: 0 })}>
             <Text style={globalStyles.buttonText}>Check Answers</Text>
         </TouchableHighlight> */}
-        </KeyboardAvoidingView>
+        </KeyboardAvoidingView >
     );
 }

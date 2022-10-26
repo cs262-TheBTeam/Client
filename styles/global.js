@@ -69,7 +69,6 @@ export const globalStyles = StyleSheet.create({
     },
 
     dropDown: {
-        width: 295,
         color: "#424B4C",
         backgroundColor: "#F4E367",
         borderRadius: 28,
@@ -77,13 +76,14 @@ export const globalStyles = StyleSheet.create({
         borderWidth: 5,
         paddingVertical: 20,
         paddingHorizontal: 30,
-        marginHorizontal: 60,
+
     },
 
     dropDownText: {
         fontSize: 16,
         color: "#424B4C"
     },
+
 
     centerItem: {
         justifyContent: 'center',
