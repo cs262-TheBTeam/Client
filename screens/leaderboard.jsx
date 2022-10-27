@@ -4,24 +4,28 @@ import { globalStyles } from '../styles/global';
 
 const data = [
     {
-        name: 'player5',
+        name: 'Maxwell Traincar',
         score: 30,
     },
     {
-        name: 'player1',
+        name: 'Literally Dracula',
         score: 100,
     },
     {
-        name: 'player3',
+        name: 'Amelia Earhart',
         score: 70,
     },
     {
-        name: 'player2',
+        name: 'Steve From Minecraft',
         score: 88,
     },
     {
-        name: 'player4',
+        name: 'Jefferson Steelflex',
         score: 43,
+    },
+    {
+        name: 'That one guy in the mejier parking lot',
+        score: 0,
     },
 ];
 
