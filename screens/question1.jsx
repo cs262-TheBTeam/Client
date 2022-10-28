@@ -6,7 +6,9 @@ import DropDownPicker from 'react-native-dropdown-picker';
 
 export default function QuestionScreen1({ route, navigation }) {
 
-    const { score } = route.params;
+    const { score, questions, questionNum } = route.params;
+    const test = questions[questionNum].images[0];
+    console.log(test);
 
     // dropdown
     const [open, setOpen] = useState(false);
@@ -38,10 +40,10 @@ export default function QuestionScreen1({ route, navigation }) {
             <View style={globalStyles.roomImages}>
                 <Slideshow height={400}
                     dataSource={[
-                        { url: require('../img/HC204/HL204-1.jpg') },
-                        { url: require('../img/HC204/HL204-2.jpg') },
-                        { url: require('../img/HC204/HL204-3.jpg') },
-                        { url: require('../img/HC204/HL204-4.jpg') },
+                        { url: require(test) },
+                        { url: require('../img/' + questions[questionNum].images[1]) },
+                        { url: require('../img/' + questions[questionNum].images[2]) },
+                        { url: require('../img/' + questions[questionNum].images[3]) },
                     ]}
                     scrollEnabled={true}
                 />
