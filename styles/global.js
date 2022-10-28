@@ -109,15 +109,18 @@ export const globalStyles = StyleSheet.create({
     },
 
     leaderboardCell: {
-        backgroundColor: '#F4E367',
-        borderColor: '#BF4A67',
-        borderBottomWidth: 5,
-        borderTopWidth: 5,
+        fontSize: 20,
+        fontWeight: 'bold',
         color: "#424B4C",
-        fontSize: 16,
+        backgroundColor: "#F4E367",
+        borderRadius: 28,
+        borderColor: "#bf4a67",
+        borderWidth: 5,
         textAlign: 'left',
-        paddingVertical: 20,
-        paddingHorizontal: 10,
+        paddingVertical: 10,
+        paddingHorizontal: 30,
+        marginVertical: 3,
+        marginHorizontal: 30,
     }
 
 });
