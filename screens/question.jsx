@@ -7,8 +7,6 @@ import DropDownPicker from 'react-native-dropdown-picker';
 export default function QuestionScreen1({ route, navigation }) {
 
     const { score, questions, questionNum } = route.params;
-    const test = questions[questionNum].images[0];
-    console.log(test);
 
     // dropdown
     const [open, setOpen] = useState(false);
@@ -40,10 +38,10 @@ export default function QuestionScreen1({ route, navigation }) {
             <View style={globalStyles.roomImages}>
                 <Slideshow height={400}
                     dataSource={[
-                        { url: require(test) },
-                        { url: require('../img/' + questions[questionNum].images[1]) },
-                        { url: require('../img/' + questions[questionNum].images[2]) },
-                        { url: require('../img/' + questions[questionNum].images[3]) },
+                        { url: questions[questionNum].images[0] },
+                        { url: questions[questionNum].images[1] },
+                        { url: questions[questionNum].images[2] },
+                        { url: questions[questionNum].images[3] },
                     ]}
                     scrollEnabled={true}
                 />
@@ -102,7 +100,7 @@ export default function QuestionScreen1({ route, navigation }) {
             <TouchableHighlight
                 style={globalStyles.button}
                 underlayColor={'#97354E'}
-                onPress={() => navigation.navigate('results1', { score, dropDownGuess: value, textInputGuess: number, dropDownAnswer: "HL", textInputAnswer: "204" })}>
+                onPress={() => navigation.navigate('results', { score, dropDownGuess: value, textInputGuess: number, questions, questionNum })}>
                 <Text style={globalStyles.buttonText}>Check Answers</Text>
             </TouchableHighlight>
 

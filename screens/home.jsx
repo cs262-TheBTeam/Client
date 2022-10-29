@@ -10,30 +10,30 @@ export default function HomeScreen({ navigation }) {
       'buildingCode': 'HL',
       'roomNumber': '204',
       'images': [
-        'HC204/HL204-1.jpg',
-        'HC204/HL204-2.jpg',
-        'HC204/HL204-3.jpg',
-        'HC204/HL204-4.jpg',
+        require('../img/HC204/HL204-1.jpg'),
+        require('../img/HC204/HL204-2.jpg'),
+        require('../img/HC204/HL204-3.jpg'),
+        require('../img/HC204/HL204-4.jpg'),
       ]
     },
     {
       'buildingCode': 'NH',
       'roomNumber': '064',
       'images': [
-        'NH064/NH064-1.jpg',
-        'NH064/NH064-2.jpg',
-        'NH064/NH064-3.jpg',
-        'NH064/NH064-4.jpg',
+        require('../img/NH064/NH064-1.jpg'),
+        require('../img/NH064/NH064-2.jpg'),
+        require('../img/NH064/NH064-3.jpg'),
+        require('../img/NH064/NH064-4.jpg'),
       ]
     },
     {
       'buildingCode': 'SB',
       'roomNumber': '010',
       'images': [
-        'SB010/SB010-1.jpg',
-        'SB010/SB010-2.jpg',
-        'SB010/SB010-3.jpg',
-        'SB010/SB010-4.jpg',
+        require('../img/SB010/SB010-1.jpg'),
+        require('../img/SB010/SB010-2.jpg'),
+        require('../img/SB010/SB010-3.jpg'),
+        require('../img/SB010/SB010-4.jpg'),
       ]
     },
   ]
@@ -64,7 +64,7 @@ export default function HomeScreen({ navigation }) {
 
       {/* button1 */}
 
-      <TouchableHighlight style={globalStyles.button} underlayColor={'#97354E'} onPress={() => navigation.navigate('question1', { playerScore: 0, questions, questionNum: 0 })}>
+      <TouchableHighlight style={globalStyles.button} underlayColor={'#97354E'} onPress={() => navigation.navigate('question', { playerScore: 0, questions, questionNum: 0 })}>
         <Text style={globalStyles.buttonText}>Start Quiz</Text>
       </TouchableHighlight>
 
