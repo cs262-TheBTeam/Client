@@ -27,8 +27,8 @@ export default function QuestionScreen1({ route, navigation }) {
     ]);
 
     // Text box
-    const [text, onChangeText] = React.useState("Useless Text");
-    const [number, onChangeNumber] = React.useState(null);
+    const [number, onChangeNumber] = useState(null);
+
 
     return (
         <KeyboardAvoidingView behavior={Platform.OS === "ios" ? "padding" : "height"} style={[globalStyles.unpaddedContainer, { postion: "absolute" }]}>
@@ -82,13 +82,15 @@ export default function QuestionScreen1({ route, navigation }) {
             {/* textinput */}
 
             <TextInput
+                id="RoomNumEntry"
                 style={globalStyles.textBox}
                 onChangeText={onChangeNumber}
                 value={number}
                 placeholder="Room Number"
                 keyboardType="numbers-and-punctuation"
                 maxLength={3}
-                placeholderTextColor="#424B4C" // not for android?
+                placeholderTextColor="#424B4C"
+                clearButtonMode="unless-editing"
             />
 
             {/* div */}
@@ -100,41 +102,11 @@ export default function QuestionScreen1({ route, navigation }) {
             <TouchableHighlight
                 style={globalStyles.button}
                 underlayColor={'#97354E'}
-                onPress={() => navigation.navigate('results', { score, dropDownGuess: value, textInputGuess: number, questions, questionNum })}>
+                onPress={() => {
+                    navigation.navigate('results', { score, dropDownGuess: value, textInputGuess: number, questions, questionNum })
+                }}>
                 <Text style={globalStyles.buttonText}>Check Answers</Text>
             </TouchableHighlight>
-
-
-            {/* <Text>Question Number One</Text>
-
-
-
-        <Slideshow
-            dataSource={[
-                { url: require('../img/HC204/HL204-1.jpg') },
-                { url: require('../img/HC204/HL204-2.jpg') },
-                { url: require('../img/HC204/HL204-3.jpg') },
-                { url: require('../img/HC204/HL204-4.jpg') },
-            ]}
-            scrollEnabled={false}
-        />
-        <DropDownPicker
-            open={open}
-            value={value}
-            items={items}
-            setOpen={setOpen}
-            setValue={setValue}
-            setItems={setItems}
-        />
-        <TextInput
-            onChangeText={onChangeNumber}
-            value={number}
-            placeholder="Room #"
-            keyboardType="alphanumeric"
-        />
-        <TouchableHighlight style={globalStyles.button} underlayColor={'#97354E'} onPress={() => navigation.navigate('results1', { playerScore: 0 })}>
-            <Text style={globalStyles.buttonText}>Check Answers</Text>
-        </TouchableHighlight> */}
         </KeyboardAvoidingView >
     );
 }
