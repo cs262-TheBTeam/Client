@@ -7,6 +7,16 @@ export default function HomeScreen({ navigation }) {
 
   const questions = [
     {
+      'buildingCode': 'SB',
+      'roomNumber': '010',
+      'images': [
+        require('../img/SB010/SB010-1.jpg'),
+        require('../img/SB010/SB010-2.jpg'),
+        require('../img/SB010/SB010-3.jpg'),
+        require('../img/SB010/SB010-4.jpg'),
+      ]
+    },
+    {
       'buildingCode': 'SF',
       'roomNumber': '204',
       'images': [
@@ -24,16 +34,6 @@ export default function HomeScreen({ navigation }) {
         require('../img/NH064/NH064-2.jpg'),
         require('../img/NH064/NH064-3.jpg'),
         require('../img/NH064/NH064-4.jpg'),
-      ]
-    },
-    {
-      'buildingCode': 'SB',
-      'roomNumber': '010',
-      'images': [
-        require('../img/SB010/SB010-1.jpg'),
-        require('../img/SB010/SB010-2.jpg'),
-        require('../img/SB010/SB010-3.jpg'),
-        require('../img/SB010/SB010-4.jpg'),
       ]
     },
   ]
