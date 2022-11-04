@@ -76,15 +76,7 @@ export default function ResultsScreen1({ route, navigation }) {
                   questionNum < 2 ? navigation.navigate('question', { playerScore: newScore, questions, questionNum: questionNum + 1 })
                       : navigation.navigate('leaderboard', { playerScore: newScore })
 
-          <View style={globalStyles.template}>
-              <Text>Answer: {dropDownAnswer}-{textInputAnswer}</Text>
-              <Text>You guessed: {dropDownGuess}-{textInputGuess}</Text>
-              <Text>Your score: {newScore}</Text>
-              <StatusBar style="auto" />
-              <TouchableHighlight style={globalStyles.button} underlayColor={'#97354E'} onPress={() =>
-                  questionNum < 2 ? navigation.navigate('question', { score: newScore, questions, questionNum: questionNum + 1 })
-                      : navigation.navigate('leaderboard', { score: newScore })
-
+          
               }>
                   <Text style={globalStyles.buttonText}>Next Question</Text>
               </TouchableHighlight>
