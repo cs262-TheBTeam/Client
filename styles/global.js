@@ -105,26 +105,34 @@ export const globalStyles = StyleSheet.create({
 
     leaderboard: {
         flex: 1,
-        backgroundColor: '#fff',
-        //alignItems: 'center',
-        //justifyContent: 'center',
+        backgroundColor: '#E6E6E6',
         paddingVertical: 40,
+        
+        
     },
 
     leaderboardCell: {
         fontSize: 20,
         fontWeight: 'bold',
         color: "#424B4C",
-        backgroundColor: "#F4E367",
         borderRadius: 28,
         borderColor: "#bf4a67",
+        backgroundColor: "#F4E367",
         borderWidth: 5,
-        textAlign: 'left',
         paddingVertical: 10,
         paddingHorizontal: 30,
         marginVertical: 3,
         marginHorizontal: 30,
-    }, 
+
+    },
+
+
+    leaderboardCellText: {
+        textAlign: 'left',
+        fontSize: 18,
+        fontWeight: 'bold',
+    },
+ 
 
 
     ResultsHighlight: {
@@ -145,7 +153,4 @@ export const globalStyles = StyleSheet.create({
         fontSize: 20,
         fontWeight: 'bold'
     }
-
-   
-
 });
