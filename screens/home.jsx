@@ -7,7 +7,7 @@ export default function HomeScreen({ navigation }) {
 
   const questions = [
     {
-      'buildingCode': 'HL',
+      'buildingCode': 'SF',
       'roomNumber': '204',
       'images': [
         require('../img/HC204/HL204-1.jpg'),
@@ -64,7 +64,7 @@ export default function HomeScreen({ navigation }) {
 
       {/* button1 */}
 
-      <TouchableHighlight style={globalStyles.button} underlayColor={'#97354E'} onPress={() => navigation.navigate('question', { playerScore: 0, questions, questionNum: 0 })}>
+      <TouchableHighlight style={globalStyles.button} underlayColor={'#97354E'} onPress={() => navigation.navigate('question', { score: Number(0), questions, questionNum: 0 })}>
         <Text style={globalStyles.buttonText}>Start Quiz</Text>
       </TouchableHighlight>
 

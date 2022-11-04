@@ -53,6 +53,9 @@ export const globalStyles = StyleSheet.create({
     buttonText: {
         color: "#D2D6D6",
         fontSize: 16,
+
+        // #ffffff
+        // D2D6D6
     },
 
     textBox: {
@@ -120,6 +123,7 @@ export const globalStyles = StyleSheet.create({
         paddingHorizontal: 30,
         marginVertical: 3,
         marginHorizontal: 30,
+
     },
 
 
@@ -127,5 +131,26 @@ export const globalStyles = StyleSheet.create({
         textAlign: 'left',
         fontSize: 18,
         fontWeight: 'bold',
+    },
+ 
+
+
+    ResultsHighlight: {
+        backgroundColor: "#F4E367",
+        alignItems: 'center',
+        justifyContent: 'center',
+        paddingVertical: 15,
+        paddingHorizontal: 15,
+        marginHorizontal: 10,
+        borderRadius: 28,
+        borderColor: "#bf4a67",
+        borderWidth: 5,
+
+    },
+
+    ResultsbuttonText: {
+       color: "#424B4C",
+        fontSize: 20,
+        fontWeight: 'bold'
     }
 });
