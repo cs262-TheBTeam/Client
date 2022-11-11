@@ -1,4 +1,3 @@
-import { faRightToBracket } from '@fortawesome/free-solid-svg-icons';
 import { StyleSheet } from 'react-native';
 
 export const globalStyles = StyleSheet.create({
@@ -53,9 +52,6 @@ export const globalStyles = StyleSheet.create({
     buttonText: {
         color: "#D2D6D6",
         fontSize: 16,
-
-        // #ffffff
-        // D2D6D6
     },
 
     textBox: {
@@ -148,7 +144,7 @@ export const globalStyles = StyleSheet.create({
 
     },
 
-    ResultsbuttonText: {
+    ResultsButtonText: {
        color: "#424B4C",
         fontSize: 20,
         fontWeight: 'bold'

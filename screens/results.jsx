@@ -1,6 +1,7 @@
+/* eslint-disable react/prop-types */
 import * as React from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { Button, Text, TouchableHighlight, View } from 'react-native';
+import { Text, TouchableHighlight, View } from 'react-native';
 import { globalStyles } from '../styles/global';
 
 export default function ResultsScreen1({ route, navigation }) {
@@ -19,20 +20,20 @@ export default function ResultsScreen1({ route, navigation }) {
         let points = 0;
         if (ddGuess == ddAnswer) {
             points += 1;
-        };
+        }
         if (firstDigit(tiGuess) == firstDigit(tiAnswer)) {
             points += 3;
-        };
+        }
         if (Number(tiGuess) == Number(tiAnswer)) {
             points += 10;
-        };
+        }
         return (Number(points));
-    };
+    }
     function firstDigit(num) {
         return (
             Number(String(num).slice(0, 1))
         );
-    };
+    }
 
 
     return (
@@ -50,7 +51,7 @@ export default function ResultsScreen1({ route, navigation }) {
 
         {/* button1 */}
         <View style={globalStyles.ResultsHighlight}>
-          <Text style={globalStyles.ResultsbuttonText}> Answer: {dropDownAnswer}-{textInputAnswer}</Text>
+          <Text style={globalStyles.ResultsButtonText}> Answer: {dropDownAnswer}-{textInputAnswer}</Text>
         </View>
 
         {/* div */}
@@ -59,14 +60,14 @@ export default function ResultsScreen1({ route, navigation }) {
 
         {/* button2 */}
         <View style={globalStyles.ResultsHighlight}>
-          <Text style={globalStyles.ResultsbuttonText}>You Guessed: {dropDownGuess}-{textInputGuess}</Text>
+          <Text style={globalStyles.ResultsButtonText}>You Guessed: {dropDownGuess}-{textInputGuess}</Text>
         </View>
 
         <View style={{ flex: 0.05 }} ></View>
 
         {/* button3 */}
         <View style={globalStyles.ResultsHighlight}>
-          <Text style={globalStyles.ResultsbuttonText}>Your score: {newScore}</Text>
+          <Text style={globalStyles.ResultsButtonText}>Your score: {newScore}</Text>
         </View>
 
         <View style={{ flex: 0.55 }} ></View>

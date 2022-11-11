@@ -1,3 +1,5 @@
+/* eslint-disable no-undef */
+/* eslint-disable react/prop-types */
 import React, { useState } from 'react';
 import { KeyboardAvoidingView, Text, TouchableHighlight, View, TextInput } from 'react-native';
 import { globalStyles } from '../styles/global';

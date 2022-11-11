@@ -1,10 +1,11 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
-import { Button, Text, TouchableHighlight, View, FlatList } from 'react-native';
+import { Text, TouchableHighlight, View, FlatList } from 'react-native';
 import { globalStyles } from '../styles/global';
 
 const data = [
     {
-        name: 'Maxwell Traincar',
+        name: 'Maxwell TrainCar',
         score: 30,
     },
     {
@@ -16,24 +17,26 @@ const data = [
         score: 70,
     },
     {
-        name: 'Steve From Minecraft',
+        name: 'Steve From MineCraft',
         score: 88,
     },
     {
-        name: 'Jefferson Steelflex',
+        name: 'Jefferson SteelFlex',
         score: 43,
     },
     {
-        name: 'That one guy in the mejier parking lot',
+        name: 'That one guy in the meijer parking lot',
         score: 0,
     },
 ];
+
 
 const Item = ({ name, score }) => (
     <View style={globalStyles.leaderboardCell} >
         <Text style = {globalStyles.leaderboardCellText}>{name}: {score}</Text>
     </View>
 );
+
 
 export default function LeaderboardScreen({ route, navigation }) {
 

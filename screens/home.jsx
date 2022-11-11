@@ -1,3 +1,5 @@
+/* eslint-disable no-undef */
+/* eslint-disable react/prop-types */
 import * as React from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { Image, Text, TouchableHighlight, View } from 'react-native';
