@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import * as React from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { Text, TouchableHighlight, View } from 'react-native';
+import { Text, TouchableHighlight, View, TextInput } from 'react-native';
 import { globalStyles } from '../styles/global';
 
 export default function ResultsScreen1({ route, navigation }) {
@@ -14,6 +14,9 @@ export default function ResultsScreen1({ route, navigation }) {
     const pointsToAdd = calculatePoints(dropDownGuess, dropDownAnswer, textInputGuess, textInputAnswer);
     const newScore = score + pointsToAdd;
     console.log(newScore)
+    
+    // // Text box
+    // const [name, onChangeName] = useState(null);
 
 
     function calculatePoints(ddGuess, ddAnswer, tiGuess, tiAnswer) {
@@ -43,7 +46,16 @@ export default function ResultsScreen1({ route, navigation }) {
         <View style={{ flex: 0.55 }} ></View>
 
         {/* title */}
-        <Text style={globalStyles.title}>Results</Text>
+        
+        {
+         questionNum < 2 ?
+         <Text style={globalStyles.title}>Results</Text> : 
+
+         <Text style={globalStyles.title}>Final Results</Text>
+        }
+
+        
+
 
         {/* div */}
 
@@ -53,6 +65,8 @@ export default function ResultsScreen1({ route, navigation }) {
         <View style={globalStyles.ResultsHighlight}>
           <Text style={globalStyles.ResultsButtonText}> Answer: {dropDownAnswer}-{textInputAnswer}</Text>
         </View>
+
+
 
         {/* div */}
 
@@ -70,6 +84,36 @@ export default function ResultsScreen1({ route, navigation }) {
           <Text style={globalStyles.ResultsButtonText}>Your score: {newScore}</Text>
         </View>
 
+        <View style={{ flex: 0.05 }} ></View>
+    
+
+        <View style={{ flex: 0.55 }} ></View>
+
+        <View style={globalStyles.ResultsHighlight}>
+          <Text style={globalStyles.ResultsButtonText}> Answer: {dropDownAnswer}-{textInputAnswer}</Text>
+        </View>
+
+
+        <View style={{ flex: 0.10 }} ></View>
+
+
+
+        {questionNum < 2 ? null: 
+      
+       <TextInput
+                id="players"
+                style={globalStyles.textBox}
+                placeholder="Enter Name"
+                keyboardType="numbers-and-punctuation"
+                maxLength={255}
+                placeholderTextColor="#424B4C"
+                clearButtonMode="unless-editing"
+            />}
+            
+
+      
+
+
         <View style={{ flex: 0.55 }} ></View>
 
 
@@ -79,7 +123,11 @@ export default function ResultsScreen1({ route, navigation }) {
 
           
               }>
+          
+                
                   <Text style={globalStyles.buttonText}>Next Question</Text>
+                  {/* <Text style={globalStyles.buttonText}>Next </Text> */}
+
               </TouchableHighlight>
 
               <View style={{ flex: 0.55 }} ></View>
@@ -88,4 +136,5 @@ export default function ResultsScreen1({ route, navigation }) {
         
     );
 }
+
 
