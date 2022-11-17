@@ -16,3 +16,6 @@ export default function FinalScreen({ navigation }) {
         </View>
     );
 }
+
+
+
