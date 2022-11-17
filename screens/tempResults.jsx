@@ -1,6 +1,7 @@
+/* eslint-disable react/prop-types */
 import * as React from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { Button, Text, TouchableOpacity, View } from 'react-native';
+import { Text, TouchableOpacity, View } from 'react-native';
 import { globalStyles } from '../styles/global';
 
 

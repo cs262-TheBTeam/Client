@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import React, { useEffect, useState } from 'react';
 import { Text, TouchableHighlight, View, FlatList } from 'react-native';
 import { globalStyles } from '../styles/global';
@@ -29,11 +30,13 @@ import { globalStyles } from '../styles/global';
 //     },
 // ];
 
+
 const Item = ({ name, score }) => (
     <View style={globalStyles.leaderboardCell} >
         <Text style={globalStyles.leaderboardCellText}>{name}: {score}</Text>
     </View>
 );
+
 
 export default function LeaderboardScreen({ route, navigation }) {
     const [data, setData] = useState([]);
@@ -44,10 +47,10 @@ export default function LeaderboardScreen({ route, navigation }) {
             setData(json);
         } catch (error) {
             console.error(error);
-
         }
     }
-    const { playerScore } = route.params
+    
+    const { score } = route.params;
 
     const renderItem = ({ item }) => (
         <Item name={item.name} score={item.score}
@@ -68,10 +71,12 @@ export default function LeaderboardScreen({ route, navigation }) {
             <FlatList
                 data={data.sort((a, b) => a.score < b.score)}
                 renderItem={renderItem} />
-            <View style={globalStyles.leaderboardCell}>
-                <Text style={globalStyles.leaderboardCellText}>Your Score: {playerScore}</Text>
+
+            <View style = {globalStyles.leaderboardCell}>
+                 <Text style={globalStyles.leaderboardCellText}>Your Score: {score}</Text>
+                 
             </View>
-            <TouchableHighlight style={globalStyles.button} underlayColor={'#97354E'} onPress={() => navigation.navigate('home', { playerScore: 0 })}>
+            <TouchableHighlight style={globalStyles.button} underlayColor={'#97354E'} onPress={() => navigation.navigate('home', { score: 0 })}>
                 <Text style={globalStyles.buttonText}>Return home</Text>
             </TouchableHighlight>
         </View>
