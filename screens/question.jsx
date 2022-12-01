@@ -1,7 +1,7 @@
 /* eslint-disable spellcheck/spell-checker */
 /* eslint-disable no-undef */
 /* eslint-disable react/prop-types */
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { KeyboardAvoidingView, Text, TouchableHighlight, View, TextInput } from 'react-native';
 import { globalStyles } from '../styles/global';
 import Slideshow from 'react-native-image-slider-show';
@@ -10,25 +10,6 @@ import DropDownPicker from 'react-native-dropdown-picker';
 export default function QuestionScreen1({ route, navigation }) {
 
     const { score, questions, images, questionNum } = route.params;
-
-    // const [images, setImages] = useState([]);
-
-    // const getImages = async () => {
-    //     try {
-    //         const path = 'https://calvin-location-guesser.herokuapp.com/images/' + questions[questionNum].idroom;
-    //         const response = await fetch(path);
-    //         const json = await response.json();
-    //         setImages(json);
-    //         console.log(questions[questionNum])
-    //         console.log(images);
-    //     } catch (error) {
-    //         console.error(error);
-    //     }
-    // }
-
-    // useEffect(() => {
-    //     getImages();
-    // }, []);
 
     // dropdown
     const [open, setOpen] = useState(false);

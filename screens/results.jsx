@@ -19,7 +19,7 @@ export default function ResultsScreen1({ route, navigation }) {
   function calculatePoints(ddGuess, ddAnswer, tiGuess, tiAnswer) {
     let points = 0;
     if (ddGuess == ddAnswer) {
-      points += 1;
+      points += 2;
     }
     if (firstDigit(tiGuess) == firstDigit(tiAnswer)) {
       points += 3;
