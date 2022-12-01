@@ -1,44 +1,50 @@
+/* eslint-disable spellcheck/spell-checker */
 /* eslint-disable no-undef */
 /* eslint-disable react/prop-types */
-import * as React from 'react';
+import React, { useEffect, useState } from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { Image, Text, TouchableHighlight, View } from 'react-native';
 import { globalStyles } from '../styles/global';
 
 export default function HomeScreen({ navigation }) {
 
-  const questions = [
-    {
-      'buildingCode': 'SB',
-      'roomNumber': '010',
-      'images': [
-        require('../img/SB010/SB010-1.jpg'),
-        require('../img/SB010/SB010-2.jpg'),
-        require('../img/SB010/SB010-3.jpg'),
-        require('../img/SB010/SB010-4.jpg'),
-      ]
-    },
-    {
-      'buildingCode': 'SF',
-      'roomNumber': '204',
-      'images': [
-        require('../img/HC204/HL204-1.jpg'),
-        require('../img/HC204/HL204-2.jpg'),
-        require('../img/HC204/HL204-3.jpg'),
-        require('../img/HC204/HL204-4.jpg'),
-      ]
-    },
-    {
-      'buildingCode': 'NH',
-      'roomNumber': '064',
-      'images': [
-        require('../img/NH064/NH064-1.jpg'),
-        require('../img/NH064/NH064-2.jpg'),
-        require('../img/NH064/NH064-3.jpg'),
-        require('../img/NH064/NH064-4.jpg'),
-      ]
-    },
-  ]
+  const [questions, setQuestions] = useState([]);
+  const [images, setImages] = useState([]);
+
+  const getQuestions = async () => {
+    try {
+      const response = await fetch('https://calvin-location-guesser.herokuapp.com/quiz');
+      const json = await response.json();
+      setQuestions(json);
+
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
+  const getImages = async () => {
+    try {
+      const imagesList = [];
+      for (i = 0; i < 5; i++) {
+        const path = 'https://calvin-location-guesser.herokuapp.com/images/' + questions[i].idroom;
+        const response = await fetch(path);
+        const json = await response.json();
+        imagesList.push(json);
+      }
+      setImages(imagesList);
+    }
+    catch (error) {
+      console.log(error);
+    }
+  }
+
+  useEffect(() => {
+    getQuestions();
+  }, []);
+
+  useEffect(() => {
+    questions.length && getImages();
+  }, [questions])
 
   return (
     <View style={globalStyles.container}>
@@ -66,7 +72,9 @@ export default function HomeScreen({ navigation }) {
 
       {/* button1 */}
 
-      <TouchableHighlight style={globalStyles.button} underlayColor={'#97354E'} onPress={() => navigation.navigate('question', { score: Number(0), questions, questionNum: 0 })}>
+      <TouchableHighlight style={globalStyles.button} underlayColor={'#97354E'} onPress={() =>
+        navigation.navigate('question', { score: Number(0), questions, images, questionNum: 0 })
+      }>
         <Text style={globalStyles.buttonText}>Start Quiz</Text>
       </TouchableHighlight>
 
@@ -76,7 +84,9 @@ export default function HomeScreen({ navigation }) {
 
       {/* button2 */}
 
-      <TouchableHighlight style={globalStyles.button} underlayColor={'#97354E'} onPress={() => navigation.navigate('leaderboard', { playerScore: undefined })}>
+      <TouchableHighlight style={globalStyles.button} underlayColor={'#97354E'} onPress={() =>
+        navigation.navigate('leaderboard', { playerScore: undefined })
+      }>
         <Text style={globalStyles.buttonText}>Leaderboard</Text>
       </TouchableHighlight>
     </View >
