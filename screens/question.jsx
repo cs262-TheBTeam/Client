@@ -1,3 +1,4 @@
+/* eslint-disable spellcheck/spell-checker */
 /* eslint-disable no-undef */
 /* eslint-disable react/prop-types */
 import React, { useState } from 'react';
@@ -8,7 +9,26 @@ import DropDownPicker from 'react-native-dropdown-picker';
 
 export default function QuestionScreen1({ route, navigation }) {
 
-    const { score, questions, questionNum } = route.params;
+    const { score, questions, images, questionNum } = route.params;
+
+    // const [images, setImages] = useState([]);
+
+    // const getImages = async () => {
+    //     try {
+    //         const path = 'https://calvin-location-guesser.herokuapp.com/images/' + questions[questionNum].idroom;
+    //         const response = await fetch(path);
+    //         const json = await response.json();
+    //         setImages(json);
+    //         console.log(questions[questionNum])
+    //         console.log(images);
+    //     } catch (error) {
+    //         console.error(error);
+    //     }
+    // }
+
+    // useEffect(() => {
+    //     getImages();
+    // }, []);
 
     // dropdown
     const [open, setOpen] = useState(false);
@@ -31,7 +51,6 @@ export default function QuestionScreen1({ route, navigation }) {
     // Text box
     const [number, onChangeNumber] = useState(null);
 
-
     return (
         <KeyboardAvoidingView behavior={Platform.OS === "ios" ? "padding" : "height"} style={[globalStyles.unpaddedContainer, { postion: "absolute" }]}>
 
@@ -40,10 +59,10 @@ export default function QuestionScreen1({ route, navigation }) {
             <View style={globalStyles.roomImages}>
                 <Slideshow height={400}
                     dataSource={[
-                        { url: questions[questionNum].images[0] },
-                        { url: questions[questionNum].images[1] },
-                        { url: questions[questionNum].images[2] },
-                        { url: questions[questionNum].images[3] },
+                        { url: images[questionNum][0].imagepath },
+                        { url: images[questionNum][1].imagepath },
+                        { url: images[questionNum][2].imagepath },
+                        { url: images[questionNum][3].imagepath },
                     ]}
                     scrollEnabled={true}
                 />
@@ -105,7 +124,7 @@ export default function QuestionScreen1({ route, navigation }) {
                 style={globalStyles.button}
                 underlayColor={'#97354E'}
                 onPress={() => {
-                    navigation.navigate('results', { score, dropDownGuess: value, textInputGuess: number, questions, questionNum })
+                    navigation.navigate('results', { score, dropDownGuess: value, textInputGuess: number, questions, images, questionNum })
                 }}>
                 <Text style={globalStyles.buttonText}>Check Answers</Text>
             </TouchableHighlight>
