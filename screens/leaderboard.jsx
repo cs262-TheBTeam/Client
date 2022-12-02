@@ -4,33 +4,6 @@ import React, { useEffect, useState } from 'react';
 import { Text, TouchableHighlight, View, FlatList } from 'react-native';
 import { globalStyles } from '../styles/global';
 
-// const data = [
-//     {
-//         name: 'Maxwell Traincar',
-//         score: 30,
-//     },
-//     {
-//         name: 'Literally Dracula',
-//         score: 100,
-//     },
-//     {
-//         name: 'Amelia Earhart',
-//         score: 70,
-//     },
-//     {
-//         name: 'Steve From Minecraft',
-//         score: 88,
-//     },
-//     {
-//         name: 'Jefferson Steelflex',
-//         score: 43,
-//     },
-//     {
-//         name: 'That one guy in the mejier parking lot',
-//         score: 0,
-//     },
-// ];
-
 const Item = ({ name, score }) => (
     <View style={globalStyles.leaderboardCell} >
         <Text style={globalStyles.leaderboardCellText}>{name}: {score}</Text>

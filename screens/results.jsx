@@ -20,13 +20,13 @@ export default function ResultsScreen1({ route, navigation }) {
 
   function calculatePoints(ddGuess, ddAnswer, tiGuess, tiAnswer) {
     let points = 0;
-    if (ddGuess == ddAnswer) {
+    if (ddGuess === ddAnswer) {
       points += 2;
     }
-    if (firstDigit(tiGuess) == firstDigit(tiAnswer)) {
+    if (firstDigit(tiGuess) === firstDigit(tiAnswer)) {
       points += 3;
     }
-    if (Number(tiGuess) == Number(tiAnswer)) {
+    if (Number(tiGuess) === Number(tiAnswer)) {
       points += 10;
     }
     return (Number(points));
@@ -46,7 +46,7 @@ export default function ResultsScreen1({ route, navigation }) {
 
     if (newPlayerData.name !== '' && newPlayerData.score !== undefined) {
       try {
-        const response = await fetch('https://calvin-location-guesser.herokuapp.com/players', {
+        await fetch('https://calvin-location-guesser.herokuapp.com/players', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'
