@@ -4,8 +4,8 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import HomeScreen from "./screens/home.jsx";
 import QuestionScreen from "./screens/question.jsx";
 import ResultsScreen from "./screens/results.jsx";
-import FinalScreen from "./screens/final.jsx";
 import LeaderboardScreen from "./screens/leaderboard.jsx";
+import HelpScreen from "./screens/help.jsx";
 
 const Stack = createNativeStackNavigator();
 
@@ -16,8 +16,8 @@ export default function App() {
         <Stack.Screen name="home" component={HomeScreen} />
         <Stack.Screen name="question" component={QuestionScreen} />
         <Stack.Screen name="results" component={ResultsScreen} />
-        <Stack.Screen name="final" component={FinalScreen} />
         <Stack.Screen name="leaderboard" component={LeaderboardScreen} />
+        <Stack.Screen name="help" component={HelpScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );

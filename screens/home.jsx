@@ -89,6 +89,18 @@ export default function HomeScreen({ navigation }) {
       }>
         <Text style={globalStyles.buttonText}>Leaderboard</Text>
       </TouchableHighlight>
+
+      <View style={{ flex: 0.05 }} ></View>
+
+      {/* button3 */}
+
+      <TouchableHighlight style={globalStyles.button} underlayColor={'#97354E'} onPress={() =>
+        navigation.navigate('help')
+      }>
+        <Text style={globalStyles.buttonText}>How to play</Text>
+      </TouchableHighlight>
+
+
     </View >
   );
 }

@@ -91,11 +91,11 @@ export const globalStyles = StyleSheet.create({
 
     result: {
         marginTop: 16,
-        paddingVertical: 16,
+        paddingVertical: 5,
         color: "#20232a",
-        textAlign: "left",
+        textAlign: "center",
         fontSize: 20,
-        fontWeight: "bold"
+
     },
 
 
