@@ -1,7 +1,7 @@
 /* eslint-disable spellcheck/spell-checker */
 /* eslint-disable no-undef */
 /* eslint-disable react/prop-types */
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { KeyboardAvoidingView, Text, TouchableHighlight, View, TextInput } from 'react-native';
 import { globalStyles } from '../styles/global';
 import Slideshow from 'react-native-image-slider-show';
