@@ -9,8 +9,12 @@ export default function ResultsScreen1({ route, navigation }) {
 
   const { score, dropDownGuess, textInputGuess, questions, images, questionNum } = route.params;
 
-  const dropDownAnswer = questions[questionNum].buildingcode;
-  const textInputAnswer = questions[questionNum].roomnumber;
+  const isFinalPage = questionNum === 5;
+
+  // for now this is calculating the values for question 5 on the final results page
+  // this will probably be removed in the future
+  const dropDownAnswer = isFinalPage ? questions[questionNum - 1].buildingcode : questions[questionNum].buildingcode;
+  const textInputAnswer = isFinalPage ? questions[questionNum - 1].roomnumber : questions[questionNum].roomnumber;
 
   const pointsToAdd = calculatePoints(dropDownGuess, dropDownAnswer, textInputGuess, textInputAnswer);
   const newScore = score + pointsToAdd;
@@ -41,7 +45,7 @@ export default function ResultsScreen1({ route, navigation }) {
 
       <View style={{ flex: 0.55 }} ></View>
 
-      {questionNum < 4 ?
+      {!isFinalPage ?
         <Text style={globalStyles.title}>Results</Text> :
         <Text style={globalStyles.title}>Final Results</Text>}
 
@@ -72,7 +76,7 @@ export default function ResultsScreen1({ route, navigation }) {
 
       <View style={{ flex: 0.10 }} ></View>
 
-      {questionNum < 4 ?
+      {!isFinalPage ?
         null :
         <TextInput
           id="players"
@@ -89,7 +93,9 @@ export default function ResultsScreen1({ route, navigation }) {
       <TouchableHighlight style={globalStyles.button} underlayColor={'#97354E'} onPress={() =>
         questionNum < 4 ?
           navigation.navigate('question', { score: newScore, questions, images, questionNum: questionNum + 1 })
-          : navigation.navigate('leaderboard', { score: newScore })
+          : !isFinalPage ?
+            navigation.navigate('results', { score, dropDownGuess, textInputGuess, questions, images, questionNum: questionNum + 1 })
+            : navigation.navigate('leaderboard', { score: newScore })
       }>
         <Text style={globalStyles.buttonText}>Next Question</Text>
       </TouchableHighlight>
