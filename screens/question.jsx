@@ -18,15 +18,15 @@ export default function QuestionScreen1({ route, navigation }) {
         { label: 'North Hall', value: 'NH' },
         { label: 'Science Building', value: 'SB' },
         { label: 'Spoelhof Fieldhouse', value: 'SF' },
-        { label: 'Prince Conference Center', value: 'PCC' },
-        { label: 'Spoelhof Center', value: 'SC' },
-        { label: 'Hiemenga Hall', value: 'HH' },
-        { label: 'Business School', value: 'BS' },
+        { label: 'Prince Conference Center', value: 'PC' },
+        { label: 'Spoelhof Center', value: 'SPF' },
+        { label: 'Heminga Hall', value: 'HM' },
+        { label: 'Business School', value: 'BU' },
         { label: 'Hekman Library', value: 'HL' },
         { label: 'DeVries Hall', value: 'DH' },
         { label: 'Engineering Building', value: 'EB' },
         { label: 'Covenant Fine Arts Center', value: 'CFAC' },
-        { label: 'DeVos Communications Center', value: 'DCC' }
+        { label: 'DeVos Communications Center', value: 'DC' }
     ]);
 
     // Text box
