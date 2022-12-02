@@ -9,8 +9,12 @@ export default function ResultsScreen1({ route, navigation }) {
 
   const { score, dropDownGuess, textInputGuess, questions, images, questionNum } = route.params;
 
-  const dropDownAnswer = questions[questionNum].buildingcode;
-  const textInputAnswer = questions[questionNum].roomnumber;
+  const isFinalPage = questionNum === 5;
+
+  // for now this is calculating the values for question 5 on the final results page
+  // this will probably be removed in the future
+  const dropDownAnswer = isFinalPage ? questions[questionNum - 1].buildingcode : questions[questionNum].buildingcode;
+  const textInputAnswer = isFinalPage ? questions[questionNum - 1].roomnumber : questions[questionNum].roomnumber;
 
   const pointsToAdd = calculatePoints(dropDownGuess, dropDownAnswer, textInputGuess, textInputAnswer);
   const newScore = score + pointsToAdd;
@@ -39,61 +43,72 @@ export default function ResultsScreen1({ route, navigation }) {
     <View style={globalStyles.container}>
       <StatusBar style="auto" />
 
-      <View style={{ flex: 0.55 }} ></View>
+      <View style={{ flex: 0.15 }} ></View>
 
-      {questionNum < 4 ?
-        <Text style={globalStyles.title}>Results</Text> :
-        <Text style={globalStyles.title}>Final Results</Text>}
+      {!isFinalPage ?
+        <>
 
-      <View style={{ flex: 0.55 }} ></View>
+          <Text style={globalStyles.title}>Results</Text>
 
-      <View style={globalStyles.ResultsHighlight}>
-        <Text style={globalStyles.ResultsButtonText}> Answer: {dropDownAnswer}-{textInputAnswer}</Text>
-      </View>
+          <View style={{ flex: 0.35 }} ></View>
 
-      <View style={{ flex: 0.05 }} ></View>
+          <View style={globalStyles.ResultsHighlight}>
+            <Text style={globalStyles.ResultsButtonText}> Answer: {dropDownAnswer}-{textInputAnswer}</Text>
+          </View>
 
-      <View style={globalStyles.ResultsHighlight}>
-        <Text style={globalStyles.ResultsButtonText}>You Guessed: {dropDownGuess}-{textInputGuess}</Text>
-      </View>
+          <View style={{ flex: 0.05 }} ></View>
 
-      <View style={{ flex: 0.05 }} ></View>
+          <View style={globalStyles.ResultsHighlight}>
+            <Text style={globalStyles.ResultsButtonText}>You Guessed: {dropDownGuess}-{textInputGuess}</Text>
+          </View>
 
-      <View style={globalStyles.ResultsHighlight}>
-        <Text style={globalStyles.ResultsButtonText}>Your score: {newScore}</Text>
-      </View>
+          <View style={{ flex: 0.05 }} ></View>
 
-      <View style={{ flex: 0.05 }} ></View>
-      <View style={{ flex: 0.55 }} ></View>
+          <View style={globalStyles.ResultsHighlight}>
+            <Text style={globalStyles.ResultsButtonText}>Your score: {newScore}</Text>
+          </View>
 
-      <View style={globalStyles.ResultsHighlight}>
-        <Text style={globalStyles.ResultsButtonText}> Answer: {dropDownAnswer}-{textInputAnswer}</Text>
-      </View>
+          <View style={{ flex: 0.10 }} ></View>
 
-      <View style={{ flex: 0.10 }} ></View>
+          <View style={{ flex: 0.55 }} ></View>
 
-      {questionNum < 4 ?
-        null :
-        <TextInput
-          id="players"
-          style={globalStyles.textBox}
-          placeholder="Enter Name"
-          keyboardType="numbers-and-punctuation"
-          maxLength={255}
-          placeholderTextColor="#424B4C"
-          clearButtonMode="unless-editing"
-        />}
+          <TouchableHighlight style={globalStyles.button} underlayColor={'#97354E'} onPress={() =>
+            questionNum < 4 ?
+              navigation.navigate('question', { score: newScore, questions, images, questionNum: questionNum + 1 })
+              : navigation.navigate('results', { score, dropDownGuess, textInputGuess, questions, images, questionNum: questionNum + 1 })
+          }>
+            <Text style={globalStyles.buttonText}>Next Question</Text>
+          </TouchableHighlight>
+        </>
+        :
+        <>
+          <Text style={globalStyles.title}>Final Results</Text>
 
-      <View style={{ flex: 0.55 }} ></View>
+          <View style={{ flex: 0.35 }} ></View>
 
-      <TouchableHighlight style={globalStyles.button} underlayColor={'#97354E'} onPress={() =>
-        questionNum < 4 ?
-          navigation.navigate('question', { score: newScore, questions, images, questionNum: questionNum + 1 })
-          : navigation.navigate('leaderboard', { score: newScore })
-      }>
-        <Text style={globalStyles.buttonText}>Next Question</Text>
-      </TouchableHighlight>
+          <View style={globalStyles.ResultsHighlight}>
+            <Text style={globalStyles.ResultsButtonText}>Final score: {newScore}</Text>
+          </View>
 
+          <View style={{ flex: 0.05 }} ></View>
+
+          <TextInput
+            id="players"
+            style={globalStyles.textBox}
+            placeholder="Enter Name"
+            keyboardType="numbers-and-punctuation"
+            maxLength={255}
+            placeholderTextColor="#424B4C"
+            clearButtonMode="unless-editing"
+          />
+
+          <View style={{ flex: 0.05 }} ></View>
+
+          <TouchableHighlight style={globalStyles.button} underlayColor={'#97354E'} onPress={() => navigation.navigate('leaderboard', { score: newScore })}>
+            <Text style={globalStyles.buttonText}>Next Question</Text>
+          </TouchableHighlight>
+        </>
+      }
     </View>
   );
 }
