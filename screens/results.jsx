@@ -41,94 +41,59 @@ export default function ResultsScreen1({ route, navigation }) {
 
       <View style={{ flex: 0.55 }} ></View>
 
-      {/* title */}
-
-      {
-       questionNum < 2 ?
-       <Text style={globalStyles.title}>Results</Text> : 
-
-       <Text style={globalStyles.title}>Final Results</Text>
-      }
-
-      {/* div */}
+      {questionNum < 4 ?
+        <Text style={globalStyles.title}>Results</Text> :
+        <Text style={globalStyles.title}>Final Results</Text>}
 
       <View style={{ flex: 0.55 }} ></View>
 
-      {/* button1 */}
       <View style={globalStyles.ResultsHighlight}>
         <Text style={globalStyles.ResultsButtonText}> Answer: {dropDownAnswer}-{textInputAnswer}</Text>
       </View>
 
-      {/* div */}
-
       <View style={{ flex: 0.05 }} ></View>
 
-      {/* button2 */}
       <View style={globalStyles.ResultsHighlight}>
         <Text style={globalStyles.ResultsButtonText}>You Guessed: {dropDownGuess}-{textInputGuess}</Text>
       </View>
 
       <View style={{ flex: 0.05 }} ></View>
 
-      {/* button3 */}
       <View style={globalStyles.ResultsHighlight}>
         <Text style={globalStyles.ResultsButtonText}>Your score: {newScore}</Text>
       </View>
 
-        <View style={{ flex: 0.05 }} ></View>
-    
+      <View style={{ flex: 0.05 }} ></View>
+      <View style={{ flex: 0.55 }} ></View>
 
-        <View style={{ flex: 0.55 }} ></View>
+      <View style={globalStyles.ResultsHighlight}>
+        <Text style={globalStyles.ResultsButtonText}> Answer: {dropDownAnswer}-{textInputAnswer}</Text>
+      </View>
 
-        <View style={globalStyles.ResultsHighlight}>
-          <Text style={globalStyles.ResultsButtonText}> Answer: {dropDownAnswer}-{textInputAnswer}</Text>
-        </View>
+      <View style={{ flex: 0.10 }} ></View>
 
+      {questionNum < 4 ?
+        null :
+        <TextInput
+          id="players"
+          style={globalStyles.textBox}
+          placeholder="Enter Name"
+          keyboardType="numbers-and-punctuation"
+          maxLength={255}
+          placeholderTextColor="#424B4C"
+          clearButtonMode="unless-editing"
+        />}
 
-        <View style={{ flex: 0.10 }} ></View>
-
-
-
-        {questionNum < 2 ? null: 
-      
-       <TextInput
-                id="players"
-                style={globalStyles.textBox}
-                placeholder="Enter Name"
-                keyboardType="numbers-and-punctuation"
-                maxLength={255}
-                placeholderTextColor="#424B4C"
-                clearButtonMode="unless-editing"
-            />}
-            
-
-      
-
-
-        <View style={{ flex: 0.55 }} ></View>
-
+      <View style={{ flex: 0.55 }} ></View>
 
       <TouchableHighlight style={globalStyles.button} underlayColor={'#97354E'} onPress={() =>
-        questionNum < 4 ? navigation.navigate('question', { score: newScore, questions, images, questionNum: questionNum + 1 })
+        questionNum < 4 ?
+          navigation.navigate('question', { score: newScore, questions, images, questionNum: questionNum + 1 })
           : navigation.navigate('leaderboard', { score: newScore })
-
-          
-              }>
-               
-                  <Text style={globalStyles.buttonText}>Next Question</Text>
-                  {/* <Text style={globalStyles.buttonText}>Next </Text> */}
-
-              </TouchableHighlight>
-
       }>
         <Text style={globalStyles.buttonText}>Next Question</Text>
       </TouchableHighlight>
 
-      <View style={{ flex: 0.55 }} ></View>
-
-    </View >
-
+    </View>
   );
 }
-
-
