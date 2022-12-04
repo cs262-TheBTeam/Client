@@ -1,6 +1,4 @@
-/* eslint-disable spellcheck/spell-checker */
-/* eslint-disable no-undef */
-/* eslint-disable react/prop-types */
+
 import React, { useState } from 'react';
 import { KeyboardAvoidingView, Text, TouchableHighlight, View, TextInput } from 'react-native';
 import { globalStyles } from '../styles/global';
@@ -33,7 +31,8 @@ export default function QuestionScreen1({ route, navigation }) {
     const [number, onChangeNumber] = useState(null);
 
     return (
-        <KeyboardAvoidingView behavior={Platform.OS === "ios" ? "padding" : "height"} style={[globalStyles.unpaddedContainer, { postion: "absolute" }]}>
+      
+        <KeyboardAvoidingView style={[globalStyles.unpaddedContainer]} behavior={"padding"}>
 
             {/*image*/}
 
@@ -63,11 +62,12 @@ export default function QuestionScreen1({ route, navigation }) {
 
             {/* dropdown */}
 
-            <View style={[{ marginHorizontal: 60 }, { zIndex: 10 }]}>
+            <View style={Platform.OS === 'ios' ? { paddingHorizontal: 60, zIndex: 10} : {paddingHorizontal: 60}} >
                 <DropDownPicker
                     style={globalStyles.dropDown}
                     textStyle={globalStyles.dropDownText}
                     dropDownContainerStyle={globalStyles.dropDown}
+                    placeholder="Building"
                     open={open}
                     value={value}
                     items={items}
@@ -92,7 +92,7 @@ export default function QuestionScreen1({ route, navigation }) {
                 keyboardType="numbers-and-punctuation"
                 maxLength={3}
                 placeholderTextColor="#424B4C"
-                clearButtonMode="unless-editing"
+                clearButtonMode="always"
             />
 
             {/* div */}
