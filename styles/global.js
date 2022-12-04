@@ -75,11 +75,11 @@ export const globalStyles = StyleSheet.create({
         borderWidth: 5,
         paddingVertical: 20,
         paddingHorizontal: 30,
-
     },
 
     dropDownText: {
         fontSize: 16,
+        textAlign: 'center',
         color: "#424B4C"
     },
 
@@ -148,5 +148,13 @@ export const globalStyles = StyleSheet.create({
        color: "#424B4C",
         fontSize: 20,
         fontWeight: 'bold'
+    },
+
+    TestBackground: {
+        backgroundColor: '#171717',
+        flex: 1,
+        alignItems: 'center',
+        justifyContent: 'center',
+        paddingHorizontal: 15
     }
 });
