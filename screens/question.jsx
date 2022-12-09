@@ -9,6 +9,7 @@ export default function QuestionScreen1({ route, navigation }) {
 
     const { score, questions, images, questionNum } = route.params;
 
+
     // dropdown
     const [open, setOpen] = useState(false);
     const [value, setValue] = useState(null);
@@ -106,6 +107,8 @@ export default function QuestionScreen1({ route, navigation }) {
                 underlayColor={'#97354E'}
                 onPress={() => {
                     navigation.navigate('results', { score, dropDownGuess: value, textInputGuess: number, questions, images, questionNum })
+                    setValue(null)
+                    onChangeNumber(null)
                 }}>
                 <Text style={globalStyles.buttonText}>Check Answers</Text>
             </TouchableHighlight>

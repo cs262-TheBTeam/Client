@@ -156,5 +156,6 @@ export const globalStyles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         paddingHorizontal: 15
-    }
+    },
+
 });
